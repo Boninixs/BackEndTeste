@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../config/conexao.php';
 
 use Teste\Magazord\Model\Pessoa;
 
-header('Content-Type: application/json; charset=utf-8');  // Sempre definir JSON
+header('Content-Type: application/json; charset=utf-8'); 
 
 $acao = $_GET['acao'] ?? '';
 

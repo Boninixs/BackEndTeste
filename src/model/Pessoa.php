@@ -19,7 +19,6 @@ class Pessoa
     #[ORM\Column(type: "string")]
     private string $cpfpessoa;
 
-    // Getters e Setters
     public function getIdpessoa(): int
     {
         return $this->idpessoa;
