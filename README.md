@@ -32,7 +32,7 @@ Para o projeto rodar com o servidor do xampp, é necessário alocar a pasta do p
 
 Utilizei o Composer para a instalação das dependências Doctrine/ORM e Symfony/Cache. Como o Composer, Doctrine e Symfony já têm suas pastas alocadas no meu projeto, acredito que não seja necessário ter o composer instalado para testar a aplicação.
 
-Também será necessário rodar o script abaixo no SGBD para a criação do banco e suas tabelas respectivas:
+Também será necessário rodar o script abaixo no SGBD do xampp para a criação do banco e suas tabelas respectivas:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS magazord
