@@ -34,6 +34,7 @@ Utilizei o Composer para a instalação das dependências Doctrine/ORM e Symfony
 
 Também será necessário rodar o script abaixo no SGBD para a criação do banco e suas tabelas respectivas:
 
+```sql
 CREATE DATABASE IF NOT EXISTS magazord
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
@@ -53,6 +54,7 @@ CREATE TABLE contato (
     descricaocontato VARCHAR(100) NOT NULL,
     FOREIGN KEY (idpessoa) REFERENCES pessoa(idpessoa) ON DELETE CASCADE
 );
+```
 
 Após tudo isso feito, será necessário dar 'Start' nos servidores MySql e Apache no Xampp, e em seguida acessar no navegador a url "http://localhost/magazord/public/pessoa.html"
 
