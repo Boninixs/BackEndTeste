@@ -8,7 +8,7 @@ Olá, leitor! 💖 Meu nome é **Aline**, mas pode me chamar de **Boni** tenho 2
 
 ## 💡 Sobre este repositório  
 
-Este repositório foi desenvolvido por mim para comprovar minhas habilidades no teste de estágio Magazord! Aqui, compartilho um projeto que foi um **desafio superinteressante**, no qual aprendi bastante e pude ter um contato maior com o desenvolvimento mobile. Espero que ele possa ajudar outras pessoas também, além de comprovar minhas habilidades :D! 🌷  
+Este repositório foi desenvolvido por mim para comprovar minhas habilidades no teste de estágio Magazord! Aqui, compartilho um projeto que foi um **desafio superinteressante**, no qual aprendi bastante e pude ter um contato maior com o desenvolvimento em PHP. Espero que ele possa ajudar outras pessoas também, além de comprovar minhas habilidades :D! 🌷  
 
 
 ## 🎀 Conecte-se comigo!  
@@ -24,24 +24,39 @@ Obrigada por passar por aqui! Espero que goste do projeto! ✨
 
 ## 🌸 Implementação  
 
-Este projetinho foi desenvolvido com muito carinho usando **React Native** e está disponível na plataforma **[Snack Expo](https://snack.expo.dev/)**! ✨ Isso significa que você pode testar a aplicação direto do seu navegador, sem precisar instalar nada! Super prático, né? 😍  
+Este projetinho foi desenvolvido com muito carinho usando **PHP** e está disponível na plataforma **acima**! ✨ 
 
-💡 Para ver a implementação de forma rápida e fácil, é só clicar no link abaixo, escolhendo o teste que você preferir:  
+💡 banco MySql da aplicação.
 
+Para o projeto rodar com o servidor do xampp, é necessário alocar a pasta do projeto em xampp/htdocs, pois espera-se que a estrutura de pastas seja: xampp/htdocs/magazord.
 
-  [## 🌷 Teste 1 - Lista de Tarefas](https://snack.expo.dev/@boninixs/teste1)
+Utilizei o Composer para a instalação das dependências Doctrine/ORM e Symfony/Cache. Como o Composer, Doctrine e Symfony já têm suas pastas alocadas no meu projeto, acredito que não seja necessário ter o composer instalado para testar a aplicação.
 
-  [## 💕 Teste 2 - API de Clima Local](https://snack.expo.dev/@boninixs/teste2)
-  
-<sup> _Esse teste não funcionará no simulador "Web", é necessário ou ler o Qr code e abrir no app Snack expo do seu disposito ou simular com as opções de devices disponibilizadas no link._</sup>
-    
-  [## ✨ Teste 3, 4 & 5 - Catálogo com Temas e Animações](https://snack.expo.dev/@boninixs/teste-3-4-5) 
+Também será necessário rodar o script abaixo no SGBD para a criação do banco e suas tabelas respectivas:
 
-Além disso, o arquivo do projeto está disponível neste links a cima para quem quiser baixar e rodar localmente! 📂💻  
+CREATE DATABASE IF NOT EXISTS magazord
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
 
-Prontinho! Agora é só explorar a aplicação e se divertir! 💖🚀
+USE sistema;
 
-Se tiver qualquer dúvida ou sugestão, me chama.
+CREATE TABLE pessoa (
+    idpessoa INT PRIMARY KEY AUTO_INCREMENT,
+    nomepessoa VARCHAR(100) NOT NULL,
+    cpfpessoa VARCHAR(14) NOT NULL
+);
+
+CREATE TABLE contato (
+    idcontato INT PRIMARY KEY AUTO_INCREMENT,
+    idpessoa INT NOT NULL,
+    tipocontato TINYINT(1) NOT NULL, -- 1 = Telefone, 0 = Email
+    descricaocontato VARCHAR(100) NOT NULL,
+    FOREIGN KEY (idpessoa) REFERENCES pessoa(idpessoa) ON DELETE CASCADE
+);
+
+Após tudo isso feito, será necessário dar 'Start' nos servidores MySql e Apache no Xampp, e em seguida acessar no navegador a url "http://localhost/magazord/public/pessoa.html"
+
+A partir desse ponto, o sistema já deve estar pronto para uso e testes.
 
 
 ---
